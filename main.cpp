@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 //Converts degrees F to C
 double cpp_ftoc(const char* str){
@@ -17,8 +18,21 @@ double c_ctof(const char* str){
     return degC * 1.8 + 32.0;
 }
 
-int main() {
-    char tempInput[] = "80.0";
-    std::cout << c_ctof(tempInput);
+int main(int argc, const char** argv) {
+    std::vector<std::string> args;
+    for(int index = 0; index < argc; index++){
+        args.push_back(argv[index]);
+    }
+
+    if(argc >= 2 && args[1] == "--ftoc"){
+        std::cout << cpp_ftoc(args[2].c_str()) << " C\n";
+    }
+    else if(argc >= 2 && args[1] == "--ctof"){
+        std::cout << c_ctof(args[2].c_str()) << " F\n";
+    }
+    else{
+        std::cout << "Input error. Enter --ftoc or --ctof.\n";
+    }
+
     return 0;
 }
