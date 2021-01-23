@@ -24,14 +24,14 @@ int main(int argc, const char** argv) {
         args.push_back(argv[index]);
     }
 
-    if(argc >= 2 && args[1] == "--ftoc"){
+    if(argc > 2 && args[1] == "--ftoc"){
         std::cout << cpp_ftoc(args[2].c_str()) << " C\n";
     }
-    else if(argc >= 2 && args[1] == "--ctof"){
+    else if(argc > 2 && args[1] == "--ctof"){
         std::cout << c_ctof(args[2].c_str()) << " F\n";
     }
     else{
-        std::cout << "Input error. Enter --ftoc or --ctof.\n";
+        std::cout << "Input error. Enter --ftoc or --ctof and the temperature.\n";
     }
 
     return 0;
