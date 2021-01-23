@@ -8,11 +8,17 @@
 //Converts degrees F to C
 double cpp_ftoc(const char* str){
     double degF = std::stod(str);
-    return (degF-32.0)/1.8;
+    return (degF - 32.0) / 1.8;
+}
+
+//Converts degrees C to F
+double c_ctof(const char* str){
+    double degC = std::strtod(str, NULL);
+    return degC * 1.8 + 32.0;
 }
 
 int main() {
     char tempInput[] = "80.0";
-    std::cout << cpp_ftoc(tempInput);
+    std::cout << c_ctof(tempInput);
     return 0;
 }
