@@ -1,6 +1,6 @@
-//main.cpp
+//CtoF.cpp
 //Created by Henryk Sosnowski 01/22/2021
-//Converts temperature from F to C for HW0
+//Converts temperature between C and F for HW0
 
 #include <iostream>
 #include <string>
@@ -24,10 +24,10 @@ int main(int argc, const char** argv) {
         args.push_back(argv[index]);
     }
 
-    if(argc > 2 && args[1] == "--ftoc"){
+    if(argc > 2 && args[1] == "--ftoc" && std::atoi(args[2].c_str())){
         std::cout << cpp_ftoc(args[2].c_str()) << " C\n";
     }
-    else if(argc > 2 && args[1] == "--ctof"){
+    else if(argc > 2 && args[1] == "--ctof" && std::atoi(args[2].c_str())){
         std::cout << c_ctof(args[2].c_str()) << " F\n";
     }
     else{
